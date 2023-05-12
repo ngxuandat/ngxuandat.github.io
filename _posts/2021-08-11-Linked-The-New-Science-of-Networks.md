@@ -1,8 +1,5 @@
 ---
-toc: true
 layout: post
-description:  Excerpts + Extra edit (Formatted Highlights)
-categories: [markdown]
 title: Linked: The New Science Of Networks, By Albert László Barabási
 ---
 
