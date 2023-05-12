@@ -1,8 +1,7 @@
 ---
 layout: post
-description:  Thoughts
-categories: [markdown]
-title: How to study physics as IT student
+categories: Thoughts
+title: "How to study physics as IT student"
 ---
 
 I have always been fascinated with Physics, and find myself applying basic models of Physics in my thinking all the time. Surprisingly, the things that I learned from Physics and Chemistry classes during Junior High have been serving me very well, daily and till these days. After gotten in to college, I thought I could set sometimes for Physics. I attempted Walter Lewin's courses several times yet never had the time to finish. 
