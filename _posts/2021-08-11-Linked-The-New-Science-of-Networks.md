@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linked: The New Science Of Networks, By Albert László Barabási
+title: "Linked: The New Science Of Networks, By Albert László Barabási"
 ---
 
 ## "Everything touches everything"
