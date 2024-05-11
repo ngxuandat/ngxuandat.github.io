@@ -6,7 +6,7 @@ title: "The Three ways to learn IT"
 
 
 
-# There are three path. You can take all of them, each of them are foundational for the next. Consider how much time you want to spend based on what you want to achieve learning these.
+ There are three path. You can take all of them, each of them are foundational for the next. Consider how much time you want to spend based on what you want to achieve learning these.
 
 ## Some recommendations:
 
