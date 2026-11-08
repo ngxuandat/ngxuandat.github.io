@@ -1,0 +1,29 @@
+---
+import Page from '../layouts/Page.astro';
+---
+
+<Page
+  title="Wunderkammern"
+  lede="“Wunderkammern” means the cabinet of curiosity — a map of everything I'm interested in and plan to learn."
+  wide
+>
+  <p class="hint">
+    Click the map, then scroll to zoom. The left sidebar has useful tips.
+    For the best experience, <a href="https://kumu.io/datnguyen/graph#tree-of-knowledge" target="_blank" rel="noopener noreferrer">open it on Kumu ↗</a>.
+  </p>
+  <div class="frame">
+    <iframe src="https://embed.kumu.io/b68348c5a29beb6487b09d379b457a77?scroll=1" title="Tree of knowledge map" loading="lazy"></iframe>
+  </div>
+</Page>
+
+<style>
+  .hint { color: var(--muted); margin: -1rem 0 1.5rem; }
+  .frame {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background: var(--surface);
+  }
+  iframe { display: block; width: 100%; height: min(75vh, 720px); border: 0; }
+</style>

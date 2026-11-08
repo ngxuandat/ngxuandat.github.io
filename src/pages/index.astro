@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+import PostCard from '../components/PostCard.astro';
+import { getPosts, url } from '../lib/posts';
+
+const posts = await getPosts();
+const [latest, ...rest] = posts;
+---
+
+<Base>
+  <section class="hero container">
+    <p class="eyebrow">Hi, I'm Dat 👋</p>
+    <h1>Notes on <em>economics</em>, <em>networks</em>, physics and learning things the long way.</h1>
+    <p class="lede">I study economics and keep wandering into complexity, machine learning and the physics behind computers. Explore my <a href={url('/kumu/')}>map of curiosities</a> or read <a href={url('/about/')}>more about me</a>.</p>
+  </section>
+
+  <section class="container posts" aria-label="Posts">
+    {latest && <PostCard post={latest} featured />}
+    {rest.length > 0 && (
+      <div class="grid">
+        {rest.map((post) => <PostCard post={post} />)}
+      </div>
+    )}
+  </section>
+</Base>
+
+<style>
+  .hero {
+    padding-top: 4.5rem;
+    padding-bottom: 3rem;
+  }
+  .eyebrow {
+    margin: 0 0 0.75rem;
+    font-weight: 500;
+    color: var(--accent);
+  }
+  h1 {
+    max-width: 22ch;
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2.1rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .lede {
+    max-width: 38rem;
+    margin: 1.25rem 0 0;
+    color: var(--muted);
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    line-height: 1.55;
+  }
+  @media (max-width: 640px) {
+    .hero {
+      padding-top: 2.5rem;
+      padding-bottom: 2rem;
+    }
+  }
+  .posts {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+    gap: 1.5rem;
+  }
+</style>

@@ -1,0 +1,32 @@
+---
+import Page from '../layouts/Page.astro';
+import { SITE, url } from '../lib/posts';
+---
+
+<Page title="About me">
+  <div class="about">
+    <img class="avatar" src={url('/images/logo.png')} alt="" width="120" height="120" />
+    <div class="prose">
+      <p>
+        I'm an undergraduate student majoring in Economics. I'm interested in Behavioral Economics, Economic Networks,
+        Complexity, Machine Learning and AI. I'm looking forward to working on multi-agent reinforcement learning models
+        for better economic simulation; for more details see
+        <a href="https://blog.einstein.ai/the-ai-economist/">this work</a>.
+      </p>
+      <p>
+        I'm an online learning addict with a very broad range of interests. I keep a map where I organise everything
+        I'm interested in and plan to learn more about. Have a look at it
+        <a href={url('/kumu/')}>here</a> if you're curious.
+      </p>
+      <p>
+        Find me on <a href={SITE.github}>GitHub</a> or <a href={SITE.twitter}>Twitter</a>.
+      </p>
+    </div>
+  </div>
+</Page>
+
+<style>
+  .about { display: flex; flex-direction: column; gap: 2rem; }
+  .avatar { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; background: var(--surface-2); border: 1px solid var(--border); }
+  .prose > p:first-child { margin-top: 0; }
+</style>

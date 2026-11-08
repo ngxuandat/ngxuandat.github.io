@@ -1,0 +1,36 @@
+---
+import Page from '../layouts/Page.astro';
+import { formatDate, getPosts, postDate, postUrl } from '../lib/posts';
+
+const posts = await getPosts();
+const byTag = new Map<string, typeof posts>();
+for (const p of posts) for (const t of p.data.tags) byTag.set(t, [...(byTag.get(t) ?? []), p]);
+const tags = [...byTag.keys()].sort((a, b) => a.localeCompare(b));
+---
+
+<Page title="Tags" lede="Everything, grouped by topic.">
+  <div class="tags cloud">
+    {tags.map((t) => <a class="tag" href={`#${t}`}>{t} <span>{byTag.get(t)!.length}</span></a>)}
+  </div>
+  {tags.map((t) => (
+    <section id={t}>
+      <h2># {t}</h2>
+      <ul>
+        {byTag.get(t)!.map((p) => (
+          <li><a href={postUrl(p)}>{p.data.title}</a> <span class="muted">{formatDate(postDate(p))}</span></li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Page>
+
+<style>
+  .cloud { margin-bottom: 2rem; }
+  .cloud .tag { font-size: 0.9rem; padding: 0.3rem 0.8rem; }
+  .cloud span { opacity: 0.6; }
+  section { padding-top: 1rem; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; margin: 1rem 0 0.5rem; }
+  ul { margin: 0; padding-left: 1.2rem; }
+  li { margin: 0.4rem 0; }
+  li span { font-size: 0.85rem; margin-left: 0.4rem; }
+</style>

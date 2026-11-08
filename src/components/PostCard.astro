@@ -1,0 +1,94 @@
+---
+import { formatDate, postDate, postUrl, readingTime, url, type Post } from '../lib/posts';
+interface Props { post: Post; featured?: boolean }
+const { post, featured = false } = Astro.props;
+const { title, description, tags, image } = post.data;
+---
+
+<article class:list={['card', { featured }]}>
+  {image && <img class="card-img" src={url(image)} alt="" loading="lazy" />}
+  <div class="card-body">
+    <p class="card-meta">
+      <time datetime={postDate(post).toISOString()}>{formatDate(postDate(post))}</time>
+      <span aria-hidden="true">·</span>
+      <span>{readingTime(post.body)} min read</span>
+    </p>
+    <h2 class="card-title"><a href={postUrl(post)}>{title}</a></h2>
+    {description && <p class="card-desc">{description}</p>}
+    {tags.length > 0 && (
+      <div class="tags">
+        {tags.map((t) => <a class="tag" href={url(`/tags/#${t}`)}>{t}</a>)}
+      </div>
+    )}
+  </div>
+</article>
+
+<style>
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+    border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+  }
+  .card-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: var(--surface-2);
+  }
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.4rem 1.5rem 1.5rem;
+  }
+  .card-meta {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .card-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  .featured .card-title {
+    font-size: 1.85rem;
+  }
+  .card-title a {
+    color: var(--text);
+    text-decoration: none;
+  }
+  /* Whole card is clickable */
+  .card-title a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+  .card-desc {
+    margin: 0;
+    color: var(--muted);
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.55;
+  }
+  .tags {
+    position: relative;
+    z-index: 1;
+    margin-top: 0.25rem;
+  }
+</style>
