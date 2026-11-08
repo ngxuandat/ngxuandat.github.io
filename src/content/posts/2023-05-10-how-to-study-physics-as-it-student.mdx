@@ -1,0 +1,82 @@
+---
+title: How to study physics as an IT student
+description: A five-part physics curriculum for computer science majors, focused on core ideas and their applications.
+tags: [physics, learning, cs]
+toc: true
+---
+
+import Callout from '../../components/Callout.astro';
+import Curriculum from '../../components/Curriculum.tsx';
+
+I have always been fascinated by physics, and I find myself applying basic physics models in my thinking all the time. Surprisingly, what I learned in physics and chemistry classes in junior high has served me very well, every day, to this day. After getting into college, I thought I could set aside some time for physics. I attempted Walter Lewin's courses several times but never had the time to finish them.
+
+Fortunately, an educator in Vietnam has already come up with a physics curriculum for CS majors. Here are the main notes I took from his blog post, which is written in Vietnamese.
+
+## Why physics, if you're a CS major?
+
+- IT is huge right now, and you probably don't have time for too much unnecessary knowledge.
+- Working with computers means you naturally get into the habit of self-studying a lot when needed.
+- Combining physics ideas and concepts with programming and data crunching can generate good start-up ideas.
+- By learning basic physics ideas and concepts, you will know what to look up when needed.
+- Many physics ideas are useful when working on IoT, cyber-physical systems, graphics, signal analysis, microcontrollers, quantum computing, cryptography and more.
+
+<Callout type="tip" title="Study smart, not traditionally">
+  You don't need to study physics the traditional way (which is almost impossible if you are also majoring in CS). Focus on the core ideas, concepts and their applications. Once you have a grasp of the basics, go deeper into the topics you're interested in.
+</Callout>
+
+The following curriculum should give you a decent physics foundation. It will help you see the big picture of physics while giving you enough fundamentals to stay open to new computing technologies that are deeply rooted in physics, like quantum computing or brain simulation.
+
+## The curriculum
+
+Each part has three core topics, and each topic comes with a *deep dive* into an application. Tick topics off as you go — your progress is saved in this browser.
+
+<Curriculum
+  client:visible
+  storageKey="physics-curriculum"
+  parts={[
+    {
+      title: 'Physics and the world system',
+      topics: [
+        { title: 'Oscillation and motion', deepDive: 'Structures in the universe' },
+        { title: 'Electromagnetic radiation and light', deepDive: 'Relativity theory and positioning technology' },
+        { title: 'Quantum theory and the quantum world', deepDive: 'Energy and spectroscopy' },
+      ],
+    },
+    {
+      title: 'Material science for computers',
+      topics: [
+        { title: 'Semiconductors and microprocessors', deepDive: 'MOSFET technology' },
+        { title: 'Magnetic materials', deepDive: 'Computer memory' },
+        { title: 'Measurement', deepDive: 'Electron microscopes and medical imaging' },
+      ],
+    },
+    {
+      title: 'Physics of sensors',
+      topics: [
+        { title: 'Pressure and heat sensors', deepDive: 'Abnormal sound detection and noise filtering' },
+        { title: 'Chemical sensors', deepDive: 'Material analysis and environmental protection' },
+        { title: 'Magnetic sensors', deepDive: 'Radar signal analysis and environment monitoring' },
+      ],
+    },
+    {
+      title: 'Light and computer graphics',
+      topics: [
+        { title: 'Lasers', deepDive: 'Designing and making microchips' },
+        { title: 'Graphic displays and lighting', deepDive: 'Advertising displays and decoration' },
+        { title: 'Fiber optics', deepDive: 'Applications of photonics technology' },
+      ],
+    },
+    {
+      title: 'Physics and the future of computing',
+      topics: [
+        { title: 'The physics foundations of quantum computing', deepDive: "Shor's algorithm" },
+        { title: 'Quantum information', deepDive: 'Quantum cryptography' },
+        { title: 'The physics foundations of brain simulation and computing', deepDive: 'Hopfield networks and spin glasses' },
+      ],
+    },
+  ]}
+/>
+
+<Callout type="note" title="Work in progress">
+  I'll add learning materials for each topic over time. For now, I'll just leave it here. (May 10, 2023)
+</Callout>

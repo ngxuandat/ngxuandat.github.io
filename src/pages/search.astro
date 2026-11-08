@@ -1,0 +1,25 @@
+---
+import Page from '../layouts/Page.astro';
+import Search, { type SearchItem } from '../components/Search.tsx';
+import { formatDate, getPosts, postDate, postUrl } from '../lib/posts';
+
+const posts = await getPosts();
+const items: SearchItem[] = posts.map((p) => ({
+  title: p.data.title,
+  description: p.data.description ?? '',
+  url: postUrl(p),
+  date: formatDate(postDate(p)),
+  tags: p.data.tags,
+  // Strip markdown/MDX syntax for a plain-text index.
+  text: (p.body ?? '')
+    .replace(/^(import|export) .*$/gm, '')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/[#*_`>|\[\]()-]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim(),
+}));
+---
+
+<Page title="Search">
+  <Search client:load items={items} />
+</Page>

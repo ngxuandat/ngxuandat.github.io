@@ -1,0 +1,14 @@
+---
+import Page from '../layouts/Page.astro';
+import Gallery from '../components/Gallery.tsx';
+import { url } from '../lib/posts';
+
+const images = [
+  { src: url('/images/drawing_01.png'), alt: 'Drawing 01' },
+  { src: url('/images/drawing_02.png'), alt: 'Drawing 02' },
+];
+---
+
+<Page title="Gallery" lede="Drawings and sketches. Click one to see it full size." wide>
+  <Gallery client:visible images={images} />
+</Page>
