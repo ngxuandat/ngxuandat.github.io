@@ -63,6 +63,13 @@ const isActive = (href: string) => {
       })();
     </script>
     <slot name="head" />
+
+    <!-- GoatCounter: cookie-free analytics. is:inline stops Astro from bundling it. -->
+    <script
+      is:inline
+      data-goatcounter="https://datng.goatcounter.com/count"
+      async
+      src="https://gc.zgo.at/count.js"></script>
   </head>
   <body>
     <slot name="top" />
