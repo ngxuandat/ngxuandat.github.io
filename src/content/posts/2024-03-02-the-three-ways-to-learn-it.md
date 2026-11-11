@@ -1,7 +1,7 @@
 ---
 title: "The Three ways to learn IT"
 description: Three learning paths for IT, from freelance programming to understanding the hottest trends and building a venture.
-tags: [learning, cs, career]
+tags: [learning, cs, career, english]
 toc: true
 ---
 
