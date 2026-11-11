@@ -1,7 +1,7 @@
 ---
 title: "Linked: The New Science of Networks"
 description: Excerpts and notes from Albert-László Barabási's book on how networks shape our world.
-tags: [networks, complexity, books]
+tags: [networks, complexity, books, english]
 toc: true
 ---
 
