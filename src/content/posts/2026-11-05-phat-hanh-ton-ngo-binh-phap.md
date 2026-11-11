@@ -8,7 +8,7 @@ toc: false
 Mình vừa dàn lại và phát hành bản PDF **Tôn Ngô Binh Pháp** của dịch giả **Ngô Văn Triện** (bút hiệu Trúc Khê), để bạn nào quan tâm có thể tải về đọc trên máy tính, điện thoại hay máy đọc sách.
 
 <p>
-  <a href="/media/T%C3%B4n%20Ng%C3%B4%20Binh%20Ph%C3%A1p%20-%20Ng%C3%B4%20V%C4%83n%20Tri%E1%BB%87n.pdf" download>
+  <a href="/media/T%C3%B4n%20Ng%C3%B4%20Binh%20Ph%C3%A1p%20-%20Ng%C3%B4%20V%C4%83n%20Tri%E1%BB%87n.pdf" download data-goatcounter-click="download-ton-ngo-binh-phap" data-goatcounter-title="Download: Tôn Ngô Binh Pháp (PDF)">
     <strong>⬇ Tải xuống: Tôn Ngô Binh Pháp - Ngô Văn Triện (PDF, 184 trang, ~534 KB)</strong>
   </a>
 </p>
